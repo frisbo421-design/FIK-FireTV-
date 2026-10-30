@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="color-scheme" content="dark"><title>FIK — Your TV</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="night">
+  <div class="backdrop" aria-hidden="true"></div><div class="backdrop-vignette" aria-hidden="true"></div>
+  <div class="interface" id="interface">
+    <header class="header">
+      <div class="brand" aria-label="FIK home"><div class="brand-word">FIK<span class="brand-period">.</span></div><div class="brand-line"></div></div>
+      <nav class="nav" aria-label="Primary">
+        <button class="tab focusable selected" data-action="home">Home</button>
+        <button class="tab focusable" data-action="apps">Apps</button>
+        <button class="tab focusable" data-action="ambient">Ambient</button>
+      </nav>
+      <div class="header-right"><span class="network-indicator" aria-hidden="true">●</span><span id="topDate">THURSDAY, OCTOBER 29</span><span class="header-clock" id="topTime">8:18</span><button class="head-gear focusable" data-action="prefs" aria-label="Customize FIK">⚙</button></div>
+    </header>
+    <main id="homeView" class="home-view">
+      <section class="hero" aria-label="Welcome">
+        <div class="hero-content">
+          <div class="kicker"><span class="kicker-line"></span><span>YOUR LIBRARY</span><span class="kicker-sep">/</span><span>IN FOCUS</span></div>
+          <h1 id="heroGreeting">Your apps.</h1>
+          <p id="heroSubtitle" class="hero-sub">Choose something to watch.</p>
+          <button class="hero-button focusable" data-action="apps">Explore your apps <span class="arrow">↗</span></button>
+        </div>
+        <div class="spotlight" aria-label="Selected application"><div class="spotlight-halo"></div><div class="spotlight-object" id="spotlightMark">F</div><div class="spotlight-footer"><span class="spotlight-label">SELECTED APP</span><span id="spotlightName">FIK</span></div></div>
+      </section>
+      <section class="apps-section" aria-label="Your apps">
+        <div class="section-head"><div><span class="section-eyebrow">01 / QUICK LAUNCH</span><h2>Your apps<span class="section-dot">.</span></h2></div><button class="section-link focusable" data-action="apps">All apps <span aria-hidden="true">↗</span></button></div>
+        <div id="pinnedApps" class="app-strip" aria-label="Favorite applications"></div>
+      </section>
+      <div class="home-bottom"><button class="system-link focusable" data-action="system" aria-label="Return to Amazon Fire TV Home">FIRE TV HOME <span class="slash">↗</span></button><span id="nativeMode">LOCAL EXPERIENCE</span><span>← → NAVIGATE <span class="hint-sep">·</span> OK OPEN <span class="hint-sep">·</span> BACK RETURN</span></div>
+    </main>
+    <main id="appsView" class="apps-view hidden">
+      <div class="library-header"><div><span class="section-eyebrow">02 / EVERYTHING IN ONE PLACE</span><h1>All apps<span class="section-dot">.</span></h1><p>Choose an installed application to open it, or pin it to your Home screen.</p></div><span id="appCount" class="app-count">0 APPS</span></div>
+      <div id="allApps" class="library-grid"></div><div class="lib-footnote" id="appsNote"></div>
+    </main>
+  </div>
+  <section id="ambientView" class="ambient-view hidden" aria-hidden="true"><div class="ambient-veil"></div><div class="ambient-logo">FIK<span>.</span></div><div class="ambient-center"><div id="ambientTime" class="ambient-time">8:18</div><div id="ambientDate" class="ambient-date">THURSDAY, OCTOBER 29</div></div><div class="ambient-exit">PRESS BACK TO RETURN</div></section>
+  <div id="modalShade" class="modal-shade hidden" aria-hidden="true"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-top"><div><span class="section-eyebrow">MAKE IT YOURS</span><h2 id="modalTitle">Customize FIK</h2></div><button class="close-control focusable" data-action="close" aria-label="Close settings">×</button></div><div class="modal-section"><h3>Atmosphere</h3><p>Choose your background. Changes are saved on this television.</p><div id="themes" class="theme-row"></div></div><div class="modal-section"><div class="modal-subhead"><h3>Favorite applications</h3><span>UP TO 8</span></div><p>Select apps to show in your Home row. Only installed applications can launch.</p><div id="pinApps" class="pin-grid"></div></div><div class="modal-bottom"><span>LOCAL ONLY / NO SIGN-IN</span><button class="done-button focusable" data-action="close">Done</button></div></section></div>
+  <div class="toast hidden" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
